@@ -82,8 +82,8 @@ public class LayerValidation {
                     }
                 }
 
-                if (weightConstraints != null && layer.initializer().biasKeys(layer).size() > 0) {
-                    for (LayerConstraint c : weightConstraints) {
+                if (biasConstraints != null && layer.initializer().biasKeys(layer).size() > 0) {
+                    for (LayerConstraint c : biasConstraints) {
                         LayerConstraint c2 = c.clone();
                         c2.setParams(new HashSet<>(layer.initializer().biasKeys(layer)));
                         allConstraints.add(c2);
